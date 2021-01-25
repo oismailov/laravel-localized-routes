@@ -22,7 +22,7 @@ class SetAppLocale
      */
     public function handle(Request $request, Closure $next)
     {
-        App::setLocale(rtrim($request->route('locale', 'en'), '/'));
+        App::setLocale(rtrim($request->route('locale', config('app.locale')), '/'));
 
         return $next($request);
     }
